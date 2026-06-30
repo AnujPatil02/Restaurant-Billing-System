@@ -41,18 +41,18 @@ class BillingSystem:
         self.build_bill_area()
 
     def draw_gradient(self):
-        canvas = Canvas(self.root, width=1000, height=650, highlightthickness=0)
+        canvas = Canvas(self.root, width=970, height=1300, highlightthickness=0)
         canvas.place(x=0, y=0)
-        for i in range(650):
-            r = int(255 - (255 - 230) * i / 650)
-            g = int(245 - (245 - 255) * i / 650)
-            b = int(230 - (230 - 200) * i / 650)
+        for i in range(1300):
+            r = int(255 - (255 - 230) * i / 1300)
+            g = int(245 - (245 - 255) * i / 1300)
+            b = int(230 - (230 - 200) * i / 1300)
             color = f'#{r:02x}{g:02x}{b:02x}'
-            canvas.create_line(0, i, 1000, i, fill=color)
+            canvas.create_line(0, i, 970, i, fill=color)
 
     def build_customer_frame(self):
         frame = Frame(self.root, bg="#ffffff", bd=2, relief=RIDGE)
-        frame.place(x=10, y=10, width=980, height=42)
+        frame.place(x=10, y=10, width=940, height=42)
 
         Label(frame, text="Customer Name:", font=("Arial", 12), bg="white").grid(row=0, column=0, padx=5, pady=5)
         Entry(frame, textvariable=self.customer_name, width=20).grid(row=0, column=1, padx=5)
@@ -65,7 +65,7 @@ class BillingSystem:
 
     def build_menu_frame(self):
         frame = Frame(self.root, bg="#dfffe0", bd=2, relief=RIDGE)
-        frame.place(x=10, y=90, width=480, height=400)
+        frame.place(x=10, y=90, width=480, height=180)
 
         col = 0
         for category, items in self.menu.items():
@@ -82,7 +82,7 @@ class BillingSystem:
 
     def build_button_frame(self):
         frame = Frame(self.root, bg="#f0fff0", bd=2, relief=RIDGE)
-        frame.place(x=500, y=90, width=490, height=80)
+        frame.place(x=500, y=90, width=450, height=80)
 
         Label(frame, text="Discount %:", bg="#f0fff0").grid(row=0, column=0, padx=5)
         Entry(frame, textvariable=self.discount, width=5).grid(row=0, column=1, padx=5)
@@ -99,9 +99,9 @@ class BillingSystem:
         Button(frame, text="View Bills", command=self.view_bills, bg="#27ae60", fg="white").grid(row=1, column=3, padx=5)
 
     def build_bill_area(self):
-        Label(self.root, text="🧾 Bill Receipt", font=("Arial", 14, "bold"), bg="#dfffe0").place(x=10, y=500)
-        self.bill_area = Text(self.root, height=7, width=118, font=("Courier", 10))
-        self.bill_area.place(x=10, y=530)
+        Label(self.root, text="🧾 Bill Receipt", font=("Arial", 14, "bold"), bg="#dfffe0").place(x=10, y=300)
+        self.bill_area = Text(self.root, height=30, width=117, font=("Courier", 10))
+        self.bill_area.place(x=10, y=345)
 
     def calculate_bill(self):
         total = 0
