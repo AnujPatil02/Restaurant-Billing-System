@@ -1,3 +1,5 @@
+# The Social Bistro - (Restaurant Billing System)
+
 from tkinter import *
 from tkinter import ttk, messagebox
 from datetime import datetime
