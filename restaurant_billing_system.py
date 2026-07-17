@@ -140,16 +140,6 @@ class BillingSystem:
         with open(filename, "w") as file:
             file.write(bill_text)
 
-        # Save to CSV
-        with open("sales.csv", "a", newline="") as csvfile:
-            writer = csv.writer(csvfile)
-            writer.writerow([datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-                             self.customer_name.get(),
-                             self.customer_phone.get(),
-                             self.table_no.get(),
-                             total, discount_amt, tax_amt, grand_total,
-                             self.payment_method.get()])
-
         # Ask to print
         if messagebox.askyesno("Print", "Do you want to print the receipt?"):
             self.print_bill(filename)
