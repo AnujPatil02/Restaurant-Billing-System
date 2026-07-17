@@ -46,8 +46,8 @@ On first run, a `receipts/` folder is created automatically in the project direc
 ## Project Structure
 
 ```
-├── billing_system.py    # Main application source code
-├── receipts/            # Auto-generated timestamped bill receipts (.txt)
+├── restaurant_billing_system.py    # Main application source code
+├── receipts/                       # Auto-generated timestamped bill receipts (.txt)
 ├── project_screenshot.png
 └── README.md
 ```
