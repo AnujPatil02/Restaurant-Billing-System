@@ -1,6 +1,6 @@
 # 🧾 The Social Bistro — Restaurant Billing System
 
-A desktop restaurant billing application built with **Python + Tkinter**. Manages order entry, bill generation, tax/discount calculation, receipt storage, and sales record-keeping.
+A desktop restaurant billing application built with **Python + Tkinter**. Manages order entry, bill generation, tax/discount calculation and receipt storage.
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue) ![Tkinter](https://img.shields.io/badge/GUI-Tkinter-green) ![License](https://img.shields.io/badge/License-MIT-yellow)
 
@@ -13,8 +13,6 @@ A desktop restaurant billing application built with **Python + Tkinter**. Manage
 - 🧮 Automatic subtotal, discount, tax, and grand total calculation
 - 🧾 Formatted bill preview in-app
 - 💾 Bill auto-saved as a timestamped `.txt` receipt
-- 📊 Every transaction logged to `sales.csv` for record-keeping
-- 🖨️ Optional receipt printing (Windows/macOS/Linux supported)
 - 📂 "View Bills" window to browse and reopen past receipts
 - 🎨 Custom gradient-themed UI
 
@@ -33,7 +31,7 @@ cd <Restaurant-Billing-System>
 python restaurant_billing_system.py
 ```
 
-On first run, a `receipts/` folder and `sales.csv` file are created automatically in the project directory.
+On first run, a `receipts/` folder is created automatically in the project directory.
 
 ## How to Use
 
@@ -41,7 +39,7 @@ On first run, a `receipts/` folder and `sales.csv` file are created automaticall
 2. Enter quantities for ordered items under Snacks/Beverages.
 3. Set discount % and tax % as applicable.
 4. Choose payment method.
-5. Click **Calculate** to generate the bill, save the receipt, and log the sale.
+5. Click **Calculate** to generate the bill and save the receipt.
 6. Optionally print the receipt when prompted.
 7. Use **View Bills** to browse past receipts, or **Reset** to clear the form for a new order.
 
@@ -50,7 +48,6 @@ On first run, a `receipts/` folder and `sales.csv` file are created automaticall
 ```
 ├── billing_system.py    # Main application source code
 ├── receipts/            # Auto-generated timestamped bill receipts (.txt)
-├── sales.csv            # Auto-generated running sales log
 ├── project_screenshot.png
 └── README.md
 ```
@@ -61,8 +58,7 @@ On first run, a `receipts/` folder and `sales.csv` file are created automaticall
 |-----------------------------|--------------------------------------------------------|
 | Object-Oriented Programming | `BillingSystem` class encapsulating UI and logic        |
 | GUI programming             | Tkinter widgets — Frame, Entry, Label, Combobox, Text   |
-| File handling                | Writing `.txt` receipts and appending to `sales.csv`   |
-| CSV module                  | Structured sales record logging via `csv.writer`       |
+| File handling                | Writing `.txt` receipts |
 | Dictionaries & data modeling| Menu stored as nested dictionaries (category → items)  |
 | Directory/file management     | Auto-creating `receipts/` via `os.makedirs`             |
 | System interaction            | Cross-platform printing via `subprocess` / `os.startfile` |
